@@ -92,6 +92,24 @@
       tags: configure
   when: inventory_hostname in openio_netdata_oio_hosts
 
+- name: Set open files limit non-systemd 
+  template:
+    src: "openio-security-limits.conf.j2"
+    dest: "/etc/security/limits.d/30-netdata.conf"
+    owner: "root"
+    group: "root"
+    mode: 0644
+  tags: configure
+
+- name: Set operating system limits on mmap  
+  template:
+    src: "openio-sysctl-netdata.conf.j2"
+    dest: "/etc/sysctl.d/netdata.conf"
+    owner: "root"
+    group: "root"
+    mode: 0644
+  tags: configure
+
 - name: Set global configuration
   vars:
     _inventory: "{{ inventory | d({}) }}"

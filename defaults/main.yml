@@ -36,4 +36,9 @@ openio_netdata_s3rt_bucket: "s3roundtrip-bucket"
 openio_netdata_s3rt_object: "s3roundtrip-object"
 openio_netdata_s3rt_aws_creds: "/root/.aws/credentials"
 openio_netdata_s3rt_timeout: 5
+
+
+openio_netdata_soft_limits: 10000 
+openio_netdata_hard_limits: 30000
+
 ...

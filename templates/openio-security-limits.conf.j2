@@ -1,0 +1,4 @@
+# {{ ansible_managed }}
+
+netdata   soft    nofile  {{ openio_netdata_soft_limits }} 
+netdata   hard    nofile  {{ openio_netdata_hard_limits }}
